@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoko's Kitchen - South African & Western Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Thoko's Kitchen</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="cart-icon">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Thoko's Kitchen</h1>
+            <p>Experience the perfect blend of South African and Western cuisine</p>
+            <a href="#menu" class="cta-button">View Our Menu</a>
+        </div>
+    </section>
+
+    <section id="specialties">
+        <h2>Our Specialties</h2>
+        <div class="cuisine-types">
+            <div class="cuisine-card">
+                <h3>South African Cuisine</h3>
+                <p>Traditional dishes made with authentic recipes and flavors</p>
+                <ul>
+                    <li>Bobotie</li>
+                    <li>Pap en Vleis</li>
+                    <li>Chakalaka</li>
+                    <li>Malva Pudding</li>
+                </ul>
+            </div>
+            <div class="cuisine-card">
+                <h3>Western Cuisine</h3>
+                <p>Classic Western dishes with a unique twist</p>
+                <ul>
+                    <li>Grilled Steaks</li>
+                    <li>Gourmet Burgers</li>
+                    <li>Pasta Dishes</li>
+                    <li>Fresh Salads</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="meal-tabs">
+            <button class="meal-tab active" data-meal="breakfast">Breakfast</button>
+            <button class="meal-tab" data-meal="lunch">Lunch</button>
+            <button class="meal-tab" data-meal="dinner">Dinner</button>
+            <button class="meal-tab" data-meal="drinks">Drinks</button>
+        </div>
+
+        <!-- Breakfast Menu -->
+        <div class="menu-container meal-content active" id="breakfast">
+            <div class="menu-section">
+                <h3>South African Breakfast</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Hot Dishes</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?w=500&q=80" alt="Boerewors Breakfast" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Boerewors Breakfast</h5>
+                                    <span class="price">R95</span>
+                                </div>
+                                <p>Grilled boerewors, two eggs any style, grilled tomato, mushrooms, and toast</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Morning Pap" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Morning Pap</h5>
+                                    <span class="price">R75</span>
+                                </div>
+                                <p>Creamy morning pap served with tomato and onion gravy, boiled egg</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Light Options</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Rusk Basket" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Rusk Basket</h5>
+                                    <span class="price">R45</span>
+                                </div>
+                                <p>Traditional South African buttermilk rusks served with coffee or tea</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Western Breakfast</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Hot Dishes</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?w=500&q=80" alt="English Breakfast" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">English Breakfast</h5>
+                                    <span class="price">R110</span>
+                                </div>
+                                <p>Eggs, bacon, sausage, baked beans, grilled tomato, mushrooms, and toast</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Eggs Benedict" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Eggs Benedict</h5>
+                                    <span class="price">R95</span>
+                                </div>
+                                <p>Poached eggs on English muffins with hollandaise sauce and ham</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Light Options</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Granola Bowl" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Granola Bowl</h5>
+                                    <span class="price">R65</span>
+                                </div>
+                                <p>Homemade granola with yogurt, fresh fruits, and honey</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lunch Menu -->
+        <div class="menu-container meal-content" id="lunch">
+            <div class="menu-section">
+                <h3>South African Lunch</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Main Courses</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?w=500&q=80" alt="Boerewors Roll" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Boerewors Roll</h5>
+                                    <span class="price">R80</span>
+                                </div>
+                                <p>Traditional South African sausage in a fresh roll with caramelized onions</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Vetkoek and Mince" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Vetkoek and Mince</h5>
+                                    <span class="price">R75</span>
+                                </div>
+                                <p>Traditional fried bread filled with spiced minced meat</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Light Meals</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Chakalaka Wrap" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Chakalaka Wrap</h5>
+                                    <span class="price">R65</span>
+                                </div>
+                                <p>Grilled chicken with chakalaka sauce wrapped in a fresh tortilla</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Western Lunch</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Main Courses</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?w=500&q=80" alt="Gourmet Burger" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Gourmet Burger</h5>
+                                    <span class="price">R130</span>
+                                </div>
+                                <p>Beef patty with bacon, cheddar, and house sauce, served with fries</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Grilled Chicken Salad" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Grilled Chicken Salad</h5>
+                                    <span class="price">R95</span>
+                                </div>
+                                <p>Mixed greens with grilled chicken, avocado, and honey mustard dressing</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dinner Menu -->
+        <div class="menu-container meal-content" id="dinner">
+            <div class="menu-section">
+                <h3>South African Dinner</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Main Courses</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?w=500&q=80" alt="Bobotie" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Bobotie</h5>
+                                    <span class="price">R120</span>
+                                </div>
+                                <p>Traditional Cape Malay curried mince with egg custard, yellow rice</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Potjiekos" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Potjiekos</h5>
+                                    <span class="price">R160</span>
+                                </div>
+                                <p>Slow-cooked meat and vegetable stew in traditional three-legged pot</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Pap en Vleis" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Pap en Vleis</h5>
+                                    <span class="price">R140</span>
+                                </div>
+                                <p>Grilled meat with maize porridge and chakalaka sauce</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Desserts</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Malva Pudding" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Malva Pudding</h5>
+                                    <span class="price">R65</span>
+                                </div>
+                                <p>Classic South African dessert with cream sauce</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Western Dinner</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Main Courses</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1608877907149-a206d75ba011?w=500&q=80" alt="Grilled Ribeye" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Grilled Ribeye</h5>
+                                    <span class="price">R220</span>
+                                </div>
+                                <p>250g ribeye with herb butter, roasted vegetables, and mashed potatoes</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Grilled Salmon" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Grilled Salmon</h5>
+                                    <span class="price">R180</span>
+                                </div>
+                                <p>Fresh salmon with lemon butter sauce, quinoa, and vegetables</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Desserts</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Chocolate Fondant" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Chocolate Fondant</h5>
+                                    <span class="price">R85</span>
+                                </div>
+                                <p>Warm chocolate cake with molten center and vanilla ice cream</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drinks Menu -->
+        <div class="menu-container meal-content" id="drinks">
+            <div class="menu-section">
+                <h3>South African Drinks</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Hot Beverages</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Rooibos Tea" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Rooibos Tea</h5>
+                                    <span class="price">R25</span>
+                                </div>
+                                <p>Traditional South African herbal tea, served with honey and lemon</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Moerkoffie" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Moerkoffie</h5>
+                                    <span class="price">R30</span>
+                                </div>
+                                <p>Strong traditional boiled coffee served in an enamel mug</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Amarula Hot Chocolate" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Amarula Hot Chocolate</h5>
+                                    <span class="price">R45</span>
+                                </div>
+                                <p>Rich hot chocolate with a shot of Amarula cream liqueur</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Cold Beverages</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Rock Shandy" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Rock Shandy</h5>
+                                    <span class="price">R35</span>
+                                </div>
+                                <p>Lemonade and soda water with a dash of Angostura bitters</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Cream Soda Float" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Cream Soda Float</h5>
+                                    <span class="price">R45</span>
+                                </div>
+                                <p>South African green cream soda with vanilla ice cream</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Mango Lassi" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Mango Lassi</h5>
+                                    <span class="price">R40</span>
+                                </div>
+                                <p>Refreshing yogurt-based drink with fresh mango and cardamom</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Granadilla Cordial" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Granadilla Cordial</h5>
+                                    <span class="price">R30</span>
+                                </div>
+                                <p>Traditional passion fruit cordial mixed with sparkling water</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Local Wines</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Pinotage" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Pinotage</h5>
+                                    <span class="price">R65/glass</span>
+                                </div>
+                                <p>South African red wine varietal with rich berry flavors</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Chenin Blanc" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Chenin Blanc</h5>
+                                    <span class="price">R55/glass</span>
+                                </div>
+                                <p>Crisp white wine with apple and stone fruit notes</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Stellenbosch Cabernet" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Stellenbosch Cabernet</h5>
+                                    <span class="price">R75/glass</span>
+                                </div>
+                                <p>Full-bodied red wine with blackcurrant and cedar notes</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Cape Sauvignon Blanc" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Cape Sauvignon Blanc</h5>
+                                    <span class="price">R60/glass</span>
+                                </div>
+                                <p>Refreshing white wine with tropical fruit and herbaceous notes</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Western Drinks</h3>
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Hot Beverages</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Cappuccino" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Cappuccino</h5>
+                                    <span class="price">R35</span>
+                                </div>
+                                <p>Espresso topped with steamed milk and foam</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Hot Chocolate" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Hot Chocolate</h5>
+                                    <span class="price">R40</span>
+                                </div>
+                                <p>Rich Belgian chocolate with steamed milk and marshmallows</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Chai Latte" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Chai Latte</h5>
+                                    <span class="price">R38</span>
+                                </div>
+                                <p>Spiced Indian tea with steamed milk and honey</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Caramel Macchiato" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Caramel Macchiato</h5>
+                                    <span class="price">R42</span>
+                                </div>
+                                <p>Espresso with vanilla syrup, steamed milk and caramel drizzle</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Cold Beverages</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Fresh Juice Selection" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Fresh Juice Selection</h5>
+                                    <span class="price">R35</span>
+                                </div>
+                                <p>Orange, Apple, or Mixed Berry</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Iced Coffee" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Iced Coffee</h5>
+                                    <span class="price">R45</span>
+                                </div>
+                                <p>Double espresso over ice with milk and vanilla syrup</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Berry Smoothie" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Berry Smoothie</h5>
+                                    <span class="price">R48</span>
+                                </div>
+                                <p>Mixed berries blended with yogurt, honey, and almond milk</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Green Goddess" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Green Goddess</h5>
+                                    <span class="price">R45</span>
+                                </div>
+                                <p>Spinach, kale, apple, and ginger health smoothie</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory">
+                    <h4 class="subcategory-title">Cocktails</h4>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Classic Mojito" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Classic Mojito</h5>
+                                    <span class="price">R75</span>
+                                </div>
+                                <p>White rum, fresh mint, lime, sugar, and soda water</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Aperol Spritz" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Aperol Spritz</h5>
+                                    <span class="price">R85</span>
+                                </div>
+                                <p>Aperol, prosecco, and soda water with an orange slice</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Espresso Martini" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Espresso Martini</h5>
+                                    <span class="price">R80</span>
+                                </div>
+                                <p>Vodka, coffee liqueur, fresh espresso, and vanilla syrup</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1565592415402-7d9646a04bcd?w=500&q=80" alt="Gin & Botanical Tonic" class="menu-item-image">
+                            <div class="menu-item-content">
+                                <div class="menu-item-header">
+                                    <h5 class="menu-item-title">Gin & Botanical Tonic</h5>
+                                    <span class="price">R70</span>
+                                </div>
+                                <p>Craft gin with premium tonic water and fresh botanicals</p>
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>At Thoko's Kitchen, we bring together the best of South African and Western cuisines. Our passion for food and dedication to quality ingredients ensures an unforgettable dining experience.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Monday - Friday: 11:00 - 22:00</p>
+                <p>Saturday - Sunday: 10:00 - 23:00</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@thokoskitchen.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Thoko's Kitchen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

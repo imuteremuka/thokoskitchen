@@ -1,0 +1,528 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF0000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FF0000;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #FF0000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #FFD700;
+    color: #333;
+}
+
+/* Specialties Section */
+#specialties {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+}
+
+.cuisine-types {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cuisine-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cuisine-card h3 {
+    color: #FF0000;
+    margin-bottom: 1rem;
+}
+
+.cuisine-card ul {
+    list-style-position: inside;
+    margin-top: 1rem;
+}
+
+/* Menu Section */
+#menu {
+    padding: 5rem 5%;
+    background-color: #f5e6d3;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.menu-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.menu-section h3 {
+    color: #FF0000;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Menu Subcategories */
+.menu-subcategory {
+    margin-bottom: 3rem;
+}
+
+.subcategory-title {
+    color: #FFD700;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.subcategory-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #FF0000;
+    margin: 0.5rem auto;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.menu-item {
+    padding: 1rem;
+    border-bottom: 1px dashed #ddd;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: start;
+}
+
+.menu-item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu-item-content {
+    flex: 1;
+    min-width: 200px;
+}
+
+.menu-item:hover {
+    transform: translateX(10px);
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+.menu-item .price {
+    font-weight: 600;
+    color: #FFD700;
+    font-size: 1.1rem;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Meal Tabs */
+.meal-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.meal-tab {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background: none;
+    border: 2px solid #FF0000;
+    border-radius: 25px;
+    color: #FF0000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.meal-tab:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.meal-tab.active {
+    background-color: #FF0000;
+    color: white;
+}
+
+/* Meal Content */
+.meal-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.meal-content.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #FF0000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #FFD700;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+}
+
+.modal-header h3 {
+    color: #FF0000;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.modal-body {
+    color: #333;
+}
+
+.modal-body p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#modalItemDetails {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+.dietary-info, .preparation-time {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Cart Styles */
+#cart-icon {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #FF0000;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+}
+
+.add-to-cart-btn {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu-section {
+        flex: 100%;
+    }
+
+    .meal-tabs {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .meal-tab {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+        flex: calc(50% - 0.5rem);
+    }
+
+    .menu-item:hover {
+        transform: none;
+    }
+
+    .modal-content {
+        margin: 30% auto;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .modal-header h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* About Section */
+#about {
+    padding: 5rem 5%;
+    background-color: #fff;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    padding: 5rem 5%;
+    background-color: #f9f9f9;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #FF0000;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #FFD700;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .cuisine-card {
+        flex: 100%;
+    }
+}
