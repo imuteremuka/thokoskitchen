@@ -686,6 +686,32 @@
         </div>
     </footer>
 
+    <!-- Preview Modal -->
+    <div id="previewOverlay" class="overlay"></div>
+    <div id="previewModal" class="preview-modal">
+        <div class="preview-content">
+            <span class="preview-close">&times;</span>
+            <div class="preview-image-container">
+                <img id="previewItemImage" src="" alt="Menu Item" class="preview-image">
+            </div>
+            <div class="preview-details">
+                <h3 id="previewItemName"></h3>
+                <div class="preview-price" id="previewItemPrice"></div>
+                <p class="preview-description" id="previewItemDescription"></p>
+                <div class="preview-actions">
+                    <button class="add-to-cart-preview">Add to Cart</button>
+                    <button class="close-preview">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Viewer -->
+    <div id="imageFullscreen" class="image-fullscreen">
+        <span class="close-fullscreen">&times;</span>
+        <img src="" alt="Fullscreen Image">
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -217,28 +217,142 @@ document.addEventListener('DOMContentLoaded', function() {
 let cart = [];
 const cartCount = document.getElementById('cart-count');
 
+// Preview Modal Elements
+const previewModal = document.getElementById('previewModal');
+const previewOverlay = document.getElementById('previewOverlay');
+const previewClose = document.querySelector('.preview-close');
+const closePreviewBtn = document.querySelector('.close-preview');
+const previewItemName = document.getElementById('previewItemName');
+const previewItemPrice = document.getElementById('previewItemPrice');
+const previewItemDescription = document.getElementById('previewItemDescription');
+const previewItemImage = document.getElementById('previewItemImage');
+const previewImageContainer = document.querySelector('.preview-image-container');
+
+// Fullscreen Image Elements
+const imageFullscreen = document.getElementById('imageFullscreen');
+const fullscreenImage = imageFullscreen.querySelector('img');
+const closeFullscreenBtn = document.querySelector('.close-fullscreen');
+
+// Function to open preview modal
+function openPreview(menuItem) {
+    const title = menuItem.querySelector('.menu-item-title').textContent;
+    const price = menuItem.querySelector('.price').textContent;
+    const description = menuItem.querySelector('p').textContent;
+    const imageSrc = menuItem.querySelector('img')?.src || '';
+    
+    previewItemName.textContent = title;
+    previewItemPrice.textContent = price;
+    previewItemDescription.textContent = description;
+    previewItemImage.src = imageSrc;
+    
+    // Store the full-size image URL for fullscreen view
+    previewItemImage.dataset.fullSize = imageSrc;
+    
+    previewModal.classList.add('show');
+    previewOverlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// Toggle image zoom on click
+previewImageContainer.addEventListener('click', function(e) {
+    e.stopPropagation();
+    
+    // Toggle between zoomed and normal state
+    if (previewItemImage.classList.contains('zoomed')) {
+        previewItemImage.classList.remove('zoomed');
+    } else {
+        // Open fullscreen view if already zoomed
+        openFullscreenImage(previewItemImage.src);
+    }
+});
+
+// Open fullscreen image
+function openFullscreenImage(src) {
+    fullscreenImage.src = src;
+    imageFullscreen.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close fullscreen image
+function closeFullscreenImage() {
+    imageFullscreen.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+// Close fullscreen when clicking outside the image
+imageFullscreen.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeFullscreenImage();
+    }
+});
+
+// Close fullscreen with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && imageFullscreen.classList.contains('show')) {
+        closeFullscreenImage();
+    }
+});
+
+// Close fullscreen with close button
+closeFullscreenBtn.addEventListener('click', closeFullscreenImage);
+
+// Function to close preview modal
+function closePreview() {
+    previewModal.classList.remove('show');
+    previewOverlay.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+// Event Listeners for Preview Modal
+previewClose.addEventListener('click', closePreview);
+closePreviewBtn.addEventListener('click', closePreview);
+previewOverlay.addEventListener('click', closePreview);
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && previewModal.classList.contains('show')) {
+        closePreview();
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Add event listeners to all "Add to Cart" buttons
+    // Update menu item click handlers to open preview
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Don't open preview if clicking on Add to Cart button
+            if (!e.target.classList.contains('add-to-cart-btn')) {
+                openPreview(this);
+            }
+        });
+    });
+
+    // Add to cart from preview
+    document.querySelector('.add-to-cart-preview').addEventListener('click', function() {
+        const title = previewItemName.textContent;
+        const price = previewItemPrice.textContent;
+        
+        // Add item to cart
+        cart.push({
+            title: title,
+            price: price
+        });
+        
+        // Update cart count
+        cartCount.textContent = cart.length;
+        
+        // Visual feedback
+        this.textContent = 'Added to Cart!';
+        setTimeout(() => {
+            closePreview();
+        }, 1000);
+    });
+
+    // Original Add to Cart button functionality (for keyboard users)
     document.querySelectorAll('.add-to-cart-btn').forEach(button => {
         button.addEventListener('click', function(e) {
-            const menuItem = e.target.closest('.menu-item');
-            const title = menuItem.querySelector('.menu-item-title').textContent;
-            const price = menuItem.querySelector('.price').textContent;
-            
-            // Add item to cart
-            cart.push({
-                title: title,
-                price: price
-            });
-            
-            // Update cart count
-            cartCount.textContent = cart.length;
-            
-            // Visual feedback
-            button.textContent = 'Added!';
-            setTimeout(() => {
-                button.textContent = 'Add to Cart';
-            }, 1000);
+            e.stopPropagation(); // Prevent triggering the menu item click
+            const menuItem = this.closest('.menu-item');
+            openPreview(menuItem);
         });
     });
 
