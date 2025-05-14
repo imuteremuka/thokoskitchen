@@ -712,6 +712,25 @@
         <img src="" alt="Fullscreen Image">
     </div>
 
+    <!-- Cart Preview -->
+    <div id="cartPreview" class="cart-preview">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart">×</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R0.00</span>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
