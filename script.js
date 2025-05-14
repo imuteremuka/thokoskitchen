@@ -261,6 +261,9 @@ function renderCart() {
     
     cartItemsContainer.innerHTML = cart.map((item, index) => `
         <div class="cart-item" data-index="${index}">
+            <div class="cart-item-image">
+                <img src="${item.image || 'images/placeholder.jpg'}" alt="${item.title}" onerror="this.src='images/placeholder.jpg'">
+            </div>
             <div class="item-details">
                 <h4>${item.title}</h4>
                 <div class="item-price">${item.price}</div>
@@ -270,10 +273,10 @@ function renderCart() {
                     <button class="quantity-btn plus">+</button>
                 </div>
             </div>
-            <button class="remove-item">×</button>
+            <button class="remove-item" title="Remove item">×</button>
         </div>
     `).join('');
-
+    
     // Update total
     cartTotal.textContent = `R${calculateTotal().toFixed(2)}`;
     
@@ -338,6 +341,7 @@ function loadCart() {
 function addToCart(menuItem) {
     const title = menuItem.querySelector('.menu-item-title').textContent;
     const price = menuItem.querySelector('.price').textContent;
+    const image = menuItem.querySelector('img')?.src || '';
     
     // Check if item already exists in cart
     const existingItem = cart.find(item => item.title === title);
@@ -348,6 +352,7 @@ function addToCart(menuItem) {
         cart.push({
             title: title,
             price: price,
+            image: image,
             quantity: 1
         });
     }
