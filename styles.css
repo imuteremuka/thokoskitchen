@@ -630,7 +630,6 @@ nav {
     align-items: flex-start;
     padding: 1rem 0;
     border-bottom: 1px solid #f5f5f5;
-    gap: 1rem;
 }
 
 .cart-item:last-child {
@@ -670,12 +669,16 @@ nav {
 .item-price {
     color: #FF0000;
     font-weight: 600;
+    text-align: right;
+    min-width: 80px;
+    display: inline-block;
 }
 
 .item-quantity {
     display: flex;
     align-items: center;
     margin-top: 0.5rem;
+    justify-content: flex-end;
 }
 
 .quantity-btn {
@@ -712,7 +715,17 @@ nav {
     background-color: #f9f9f9;
 }
 
+.cart-summary > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
 .cart-total {
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+    border-top: 1px solid #ddd;
+    padding-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
