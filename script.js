@@ -240,19 +240,37 @@ function updateCartCount() {
     cartCount.textContent = totalItems;
 }
 
-// Calculate cart total
-function calculateTotal() {
+// Calculate cart subtotal (before VAT)
+function calculateSubtotal() {
     return cart.reduce((total, item) => {
         const price = parseFloat(item.price.replace('R', ''));
         return total + (price * item.quantity);
     }, 0);
 }
 
+// Calculate VAT amount (15% of subtotal)
+function calculateVat(subtotal) {
+    return subtotal * 0.15; // 15% VAT
+}
+
+// Calculate total (subtotal + VAT)
+function calculateTotal() {
+    const subtotal = calculateSubtotal();
+    const vat = calculateVat(subtotal);
+    return {
+        subtotal: subtotal,
+        vat: vat,
+        total: subtotal + vat
+    };
+}
+
 // Render cart items
 function renderCart() {
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
-        cartTotal.textContent = 'R0.00';
+        document.getElementById('cartSubtotal').textContent = 'R0.00';
+        document.getElementById('cartVat').textContent = 'R0.00';
+        document.getElementById('cartTotal').textContent = 'R0.00';
         checkoutBtn.disabled = true;
         return;
     }
@@ -277,8 +295,11 @@ function renderCart() {
         </div>
     `).join('');
     
-    // Update total
-    cartTotal.textContent = `R${calculateTotal().toFixed(2)}`;
+    // Update totals
+    const totals = calculateTotal();
+    document.getElementById('cartSubtotal').textContent = `R${totals.subtotal.toFixed(2)}`;
+    document.getElementById('cartVat').textContent = `R${totals.vat.toFixed(2)}`;
+    document.getElementById('cartTotal').textContent = `R${totals.total.toFixed(2)}`;
     
     // Add event listeners to quantity buttons and remove buttons
     document.querySelectorAll('.quantity-btn').forEach(btn => {
